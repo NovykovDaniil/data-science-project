@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "pythonpowerhouse",
+  "private_key_id": "0851aa26afec529512fd4dc26217ae8753e8d3fe",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCHF6NQNC6PmXbr\nOtnExvDow2h1wsOtj/K75Xl0BZVuaZ4rflBoALJYqOZrFO/opQvRN12AOzPDvQDx\nbc9nV0yPR6wAk9/lHUgYZe0knzqmkh/f7FtazYPycJ0/WKRAOJLBV/fJqft6Hv+7\nwtj3OUEXJ+c4zQX0knWxWXk9NCG0t9v8HS5yu3Buylu2/Ud8/Yv+24V6ivRUZAWy\nC7/9Asd1wDeSYgCh+56ph9UNrHfB0XIVHBy86Q2QXeuOe99fTHXgo70wMXrs6ix8\nXqypkt2+Xwe1dQZ3TN/qaGVSiJz8po2rSaLlgkmq5TVfT/6MBZbWfMGw7c8ec5UZ\nJ8u254erAgMBAAECggEAATjMHG31WyHIuvgEYMeIgJrGGL10bkV8wY47bN51qPGj\nDQpgb4+9QGqEbT/B/YDkLP287OFj4WOgH3prEFaouECj+0PqfmLGA80JzmtFT5zw\nQPJGDO9wxOsxWyYUicHsb6TD1+ZX45V6g2Jcnn7cCO92OCAPuD9/1bwNZhKtKAIy\nqrL7UZ9KdUORM7i2UKSo1KlL5s22aBPthkUmUWHffRUFMkx3+T4q/KnMiJHgjaXL\nJ5py0IVHj+FYLcME4aK9VTArcMhcbuTSh6S3i4OdZ3G8nZxfKr9pv5YldPzR3ZbW\nLqW4V3TH3z0xnyaIQyGUOohqIndhCe8ocDspseojwQKBgQC+r6JpQPRdrXuTnpLG\nKha9wLNNhdGYnW3nkOwigJqBreiOpO8eo/doBJgSTBEblfHTBhM2tOnMXW+rQOMQ\nneYB1DGyFxalExG5yb1odQXb8irQ7c5XrcERMQiRNGSBUuCd6iY8LmJLK5OnCMyk\nSjrRJsciBWe4SoYy/nNsKQC1SwKBgQC1XUAChPhtm3JxixLRcqWhFdV4MYbBS+sl\noK980EPBxCroxtzRL+6ok9ccToPzbiWD9JXN0ynn4vy8nu3aB51QwJA+wQSuiyr6\nc6jAZmO8z1JeI1F90AQAN68EJ2J3LtEKHVNytuqpjAoHLyVNIpNNSEPAY4GsVGLv\nWbTWSYvbIQKBgED+mHsLur8bXJ2qVRjaS7oNro/j5tcAAfAGA5aXAxLkdfn42dA1\nzyRTPIowBzzB1RU6Yt4ot/ACgQd8LGkDiNxiuTWcjQljAI2056xtBrw7RMDF7akQ\n/lefwO3NT9yMpSbuIm4s2TAKAF/UrfvpmTak4wcDlKDKNge3lxvsteMVAoGAcj9f\nxzaEWGeH3EbDf/U8qRDb/G8WeEWex4FFitaXGES+0wwSpiQPr1oSM96x+HL2Zv14\nMMRIra6rjxZ+ts39J5VmSGHG1T0Nwd+B+lGFmrbvKCYPe7XCD3EEaxV0TafMPxbi\nLm1TvaJd3tCwKrsRF6niJBuK4Ef4WtajuCl0VIECgYB0OokaUPhxLKDNydvUnFqb\nP/kKldYpi6KUYFo6H3ax+cM3/HXfmz+A6euhTIh63BPnFUX97737mJ3J++47Aytg\njNInMenxaKT0UNmQgcqi/lrP8KYu+1D66zKZ7GB5qQHTH94Yq3rZkROi6wvrKfvZ\nqQgqSPV3XSixEqlgxW6+Vg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "team3data@pythonpowerhouse.iam.gserviceaccount.com",
+  "client_id": "102488852747501213112",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/team3data%40pythonpowerhouse.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
