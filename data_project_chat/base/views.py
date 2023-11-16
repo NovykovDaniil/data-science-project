@@ -79,7 +79,7 @@ def main(request):
         answer = model.get_answer('Що таке Київ?')
         return HttpResponse(answer, content_type='text/html')
 
-    return render(request, 'base/index2.html', {})
+    return render(request, 'base/index.html', {})
     
 @login_required
 def user_logout(request):
@@ -116,21 +116,21 @@ def user_signup(request):
             login(request, user)
             return redirect('/')
         else:
-            return render(request, 'base/registration2.html', {'form': form, 'error': 'Make sure that your passwords match and the nickname is not occupied'})
+            return render(request, 'base/registration.html', {'form': form, 'error': 'Make sure that your passwords match and the nickname is not occupied'})
     else:
         form = ExtendedUserCreationForm()
 
-    return render(request, 'base/registration2.html', {'form': form})
+    return render(request, 'base/registration.html', {'form': form})
 
 
 def user_login(request):
     global image_list
     if request.method == 'GET':
-        return render(request, 'base/login2.html', {'form': AuthenticationForm()})
+        return render(request, 'base/login.html', {'form': AuthenticationForm()})
     else:
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
-            return render(request, 'base/login2.html',
+            return render(request, 'base/login.html',
                           {'form': AuthenticationForm(), 'error': 'Username or password didn\'t match'})
         login(request, user)
         return redirect('/')
