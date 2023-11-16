@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chats</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button type="button" onclick="window.location.href='/chats/';">
+        Chats
+    </button>
+    <ul>
+        {% for chat in chats %}
+            <li><a href="{% url 'chat_detail' chat.id %}">Chat #{{ chat.id }}</a></li>
+        {% endfor %}
+    </ul>
