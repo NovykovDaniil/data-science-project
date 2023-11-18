@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.shortcuts import redirect
 
 from .models import Chat, File, Question, Answer, Request
 from base.models import UserProfile
@@ -13,9 +14,11 @@ from .elasticsearch_crud import record_context, connection
 def main(request):
     user = UserProfile.objects.filter(id = request.user.id).get()
     user_chats = [chat for chat in Chat.objects.filter(user_id=user).all()]
+    print(request.method)
 
     if request.method == 'POST' and request.FILES.getlist('myfile'):
         files = request.FILES.getlist('myfile')
+        print(files)
         chat = Chat(user=user)
         user_chats.append(chat)
         chat.save()
@@ -36,8 +39,12 @@ def main(request):
 @login_required
 def chat_detail(request, chat_id):
     user = UserProfile.objects.filter(id = request.user.id).get()
-    user_chats = [chat for chat in Chat.objects.filter(user_id=user).all()]
     current_chat = Chat.objects.filter(id=chat_id).get()
+    user_chats = [chat for chat in Chat.objects.filter(user_id=user).all()]
+
+    if current_chat.user != user:
+        return redirect("/chats", {'chats': user_chats})
+    
     requests = [request_ for request_ in Request.objects.filter(chat=current_chat)]
     if request.method == "POST":
         question = Question(chat=current_chat, text=request.POST["text"])
