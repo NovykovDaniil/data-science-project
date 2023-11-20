@@ -1,7 +1,9 @@
 from elasticsearch import Elasticsearch
 
+from data_project_chat.settings import env
 
-connection = Elasticsearch(cloud_id="My_deployment:ZXVyb3BlLXdlc3Q0LmdjcC5lbGFzdGljLWNsb3VkLmNvbSRiNDE0ZjJkODAwMTU0OTE1OGEyNzVkOWY0MjljMGNmZiQzMzhlOWQxZDAxMWE0NTlmOTI2MzZhODQxNzI5YTEwYQ==", basic_auth=("elastic","7mg7tijkb1f4TcYYtrQ13djF"))
+
+connection = Elasticsearch(cloud_id=env('ELASTIC_CLOUD_ID'), basic_auth=(env('ELASTIC_LOGIN'), env('ELASTIC_PASSWORD')))
 
 
 def record_context(id_: str, context: str, connection: Elasticsearch) -> None:

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from django.shortcuts import redirect
 
 from .models import Chat, File, Question, Answer, Request
@@ -18,7 +17,6 @@ def main(request):
 
     if request.method == 'POST' and request.FILES.getlist('myfile'):
         files = request.FILES.getlist('myfile')
-        print(files)
         chat = Chat(user=user)
         user_chats.append(chat)
         chat.save()

@@ -18,8 +18,8 @@ class PDFReader(Reader):
 
     def read(self, file: InMemoryUploadedFile) -> str:
         text = ""
-        in_memory_pdf = BytesIO(file.read())  # Создаем байтовый поток из содержимого InMemoryUploadedFile
-        document = fitz.open(stream=in_memory_pdf, filetype="pdf")  # Открываем PDF из байтового потока
+        in_memory_pdf = BytesIO(file.read())  
+        document = fitz.open(stream=in_memory_pdf, filetype="pdf")
         for page_num in range(document.page_count):
             page = document.load_page(page_num)
             text += page.get_text("text")

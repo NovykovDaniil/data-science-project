@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, pipeline, AutoModelForQuestionAnswering
 
-from .elasticsearch_crud import get_context, connection
+from .elasticsearch_crud import get_context
 
 MODEL = AutoModelForQuestionAnswering.from_pretrained('henryk/bert-base-multilingual-cased-finetuned-dutch-squad2')
 

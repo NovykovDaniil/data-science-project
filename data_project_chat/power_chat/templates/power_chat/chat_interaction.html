@@ -135,18 +135,6 @@
         }
     
     </style>
-<div class="chats-back"></div>
-    <div class="chats">
-        <h2>Your Chats</h2>
-        <div class="form-group mb-2" style="margin-top: 10%">
-            {% for chat in chats %}
-            <a class="btn btn-primary col-sm-12 mb-2" href="{% url 'chat_detail' chat.id %}">
-                Chat #{{ chat.id }}
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-
     <style>
         .container-form .form-container form {
             display: flex;
@@ -168,7 +156,7 @@
     </style>
     <div class="container-form">
         <div class="form-container">
-            <form action="/chats/{{ chat_id }}/" method="post">
+            <form action="/hug_chat/" method="post">
                 {% csrf_token %}
                 <input type="text" name="text" placeholder="Input your question here..." class="form-control"> 
                 <button type="submit" class="btn btn-primary" style="margin: 0 auto;">Send</button>
@@ -184,6 +172,7 @@
             margin-left: 30%;
             margin-right: auto;
             width: 50%;
+            margin-top: 10%;
         }
     
         .chat-message {
@@ -211,10 +200,10 @@
     <div class="chat-messages">
         {% for request in requests %}
             <div class="chat-message question">
-                <p class="message-text"><strong>User: </strong>{{ request.question.text }}</p>
+                <p class="message-text"><strong>User: </strong>{{ request.question }}</p>
             </div>
             <div class="chat-message answer">
-                <p class="message-text"><strong>Model: </strong>{{ request.answer.text }}</p>
+                <p class="message-text"><strong>Model: </strong>{{ request.answer }}</p>
             </div>
         {% endfor %}
     </div>
@@ -227,7 +216,7 @@
             width: 50%;
         }
     </style>
-    <div class="chat-num"><h1>Chat #{{ chat_id }}</h1></div>
+    <div class="chat-num"><h1>Hug Chat</h1></div>
 
     
 

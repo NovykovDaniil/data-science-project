@@ -21,4 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('base.urls')),
     path('', include('chats.urls')),
+    path('', include('power_chat.urls'))
 ]
