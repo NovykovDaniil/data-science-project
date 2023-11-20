@@ -1,4 +1,3 @@
-import os
 import logging
 
 from pathlib import Path
@@ -9,14 +8,10 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.http import HttpResponse
 from django.contrib.auth import update_session_auth_hash
 
 from .models import UserProfile
 from .forms import UserProfileForm
-from chats.models import Chat, File
-from chats.data_extractor import read_file
-from chats.qa_model import QAModel
 
 logger = logging.getLogger(__name__)
 
@@ -61,24 +56,6 @@ UPLOAD_DIR = Path('temp/')
 file_list = []  
 
 def main(request):
-    if request.method == 'POST' and request.FILES.getlist('myfile'):
-        files = request.FILES.getlist('myfile')
-        user = UserProfile.objects.filter(id = request.user.id).get()
-        chat = Chat(user=user)
-        chat.save()
-        text = ''
-        for file in files:
-            if file is not None:
-                if file.content_type in ['application/pdf', 'application/msword',
-                                         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                                         'text/plain']:
-                    text += read_file(file)
-                    new_file = File(filename=file.name, chat=chat)
-                    new_file.save()
-        model = QAModel(chat.id, text)
-        answer = model.get_answer('Що таке Київ?')
-        return HttpResponse(answer, content_type='text/html')
-
     return render(request, 'base/index.html', {})
     
 @login_required
