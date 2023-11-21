@@ -54,19 +54,6 @@ python data_project_chat/manage.py runserver
 
 4. Application could be found here: http://127.0.0.1:8000
 
-
-## Launching on Docker with Databases
-
-1) Run the following command to start the development server:
-```
-docker-compose up
-```
-Application could be found here: http://127.0.0.1:8000
-
-2) Run the following command to stop
-```
-docker-compose down
-```
 ## Application features
 
 A web service with a built-in LLM, which is able to answer user questions according to the loaded context. At the moment, you can download files with the following extension: .txt, .docx, .pdf. The context will be written to a vectorized database and attached to the user's current chat. The model answers questions regardless of the context language. As a bonus, we added a "HugChat" section, which is an interaction with the HuggingChat API project.
