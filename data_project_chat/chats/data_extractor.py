@@ -2,7 +2,8 @@ from io import BytesIO
 from os.path import splitext
 from abc import abstractclassmethod, ABC
 
-import fitz
+#import fitz
+import pdfplumber
 from docx2txt import process
 from django.core.files.uploadedfile import InMemoryUploadedFile
 
@@ -14,17 +15,26 @@ class Reader(ABC):
         pass
 
 
+# class PDFReader(Reader):
+
+#     def read(self, file: InMemoryUploadedFile) -> str:
+#         text = ""
+#         in_memory_pdf = BytesIO(file.read())  
+#         document = fitz.open(stream=in_memory_pdf, filetype="pdf")
+#         for page_num in range(document.page_count):
+#             page = document.load_page(page_num)
+#             text += page.get_text("text")
+#         return text
+
 class PDFReader(Reader):
 
     def read(self, file: InMemoryUploadedFile) -> str:
         text = ""
-        in_memory_pdf = BytesIO(file.read())  
-        document = fitz.open(stream=in_memory_pdf, filetype="pdf")
-        for page_num in range(document.page_count):
-            page = document.load_page(page_num)
-            text += page.get_text("text")
+        in_memory_pdf = BytesIO(file.read())
+        with pdfplumber.open(in_memory_pdf) as pdf:
+            for page in pdf.pages:
+                text += page.extract_text()
         return text
-
 
 class TXTReader(Reader):
 

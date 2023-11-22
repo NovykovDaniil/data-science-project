@@ -1,0 +1,11 @@
+Django==4.2.1
+django_environ==0.10.0
+docx2txt==0.8
+elasticsearch==8.10.1
+hugchat==0.3.8
+transformers==4.35.0
+psycopg2-binary==2.9.6
+starlette==0.27.0
+pdfplumber==0.10.3 
+torch==2.1.0
+pypdfium2==4.24.0
