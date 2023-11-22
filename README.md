@@ -51,8 +51,14 @@ python data_project_chat/manage.py migrate
 ```
 python data_project_chat/manage.py runserver
 ```
+5. Application could be found here: http://127.0.0.1:8000
 
-4. Application could be found here: http://127.0.0.1:8000
+## Launching as docker image
+1. Type this in the command line:
+```
+docker run daniilnovykov/powerhousellm
+```
+2. Application could be found here: http://127.0.0.1:8000
 
 ## Application features
 
