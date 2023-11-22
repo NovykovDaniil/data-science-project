@@ -56,7 +56,7 @@ python data_project_chat/manage.py runserver
 ## Launching as docker image
 1. Type this in the command line:
 ```
-docker run daniilnovykov/powerhousellm
+docker run novykovdaniil/powerhousellm
 ```
 2. Application could be found here: http://127.0.0.1:8000
 
